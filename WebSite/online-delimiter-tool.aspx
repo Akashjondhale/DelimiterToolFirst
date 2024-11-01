@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="online-delimiter-tool.aspx.cs" Inherits="Tool" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Tool.aspx.cs" Inherits="Tool" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
     <style>
@@ -66,7 +66,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 5px; /* Adds space between buttons and dropdown */
+            gap: 2px; /* Adds space between buttons and dropdown */
             width: 100%;
             height: 450px;
         }
@@ -96,6 +96,7 @@
             align-items: center;
             height: 100%; /* Takes full height to allow vertical centering */
         }
+
         /* Media Queries for responsiveness */
         @media (max-width: 768px) {
             .col-hack {
@@ -146,6 +147,9 @@
             document.execCommand("copy");
         }
     </script>
+    <div class="adsense-top">
+        <!-- Google AdSense Code -->
+    </div>
     <div class="col-md-12">
         <!-- First Container -->
         <div class="col-xs-5 col-hack">
@@ -162,12 +166,13 @@
                         </div>
                     </div>
                     <div class="linedtextarea">
-                        <textarea ID="txtColumnData" runat="server" TextMode="MultiLine" CssClass="codearea " oninput="updateLineNumbers()"></textarea>
+                        <asp:TextBox ID="txtColumnData" runat="server" TextMode="MultiLine" CssClass="codearea" Wrap="false" oninput="updateLineNumbers()"></asp:TextBox>
                     </div>
                     <div class="copy" onclick="selectAllText()">Select</div>
                 </div>
             </div>
         </div>
+
         <!-- Button Container -->
         <div class="col-xs-2 col-hack-sm">
             <div class="center-container">
@@ -184,6 +189,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Second Container -->
         <div class="col-xs-5 col-hack">
             <div class="workspace vcenter">
@@ -205,5 +211,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="adsense-bottom">
+        <!-- Google AdSense Code -->
     </div>
 </asp:Content>
